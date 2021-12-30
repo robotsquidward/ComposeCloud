@@ -25,6 +25,7 @@ import com.ajkueterman.composecloud.ui.theme.textOnSurface
 import com.ajkueterman.composecloud.ui.theme.themedSurface
 import com.ajkueterman.composecloud.ui.views.FavoritesCarouselView
 import com.ajkueterman.composecloud.ui.views.HeaderView
+import com.ajkueterman.composecloud.ui.views.PhotoUploadCardView
 import com.ajkueterman.composecloud.ui.views.SearchView
 
 class MainActivity : ComponentActivity() {
@@ -53,7 +54,8 @@ fun App() {
                     elevation = FABElevation(
                         pressedElevation = 6.dp,
                         defaultElevation = 24.dp
-                    )
+                    ),
+                    modifier = Modifier.padding(bottom = 24.dp)
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_baseline_add_24),
@@ -84,6 +86,20 @@ fun App() {
                             style = MaterialTheme.typography.h5,
                             fontWeight = FontWeight.Medium,
                             color = MaterialTheme.colors.textOnSurface,
+                            modifier = Modifier
+                                .padding(horizontal = 16.dp)
+                                .padding(bottom = 8.dp)
+                        )
+                    }
+                    item {
+                        PhotoUploadCardView(
+                            modifier = Modifier
+                                .padding(horizontal = 16.dp)
+                                .padding(bottom = 8.dp)
+                        )
+                    }
+                    item {
+                        PhotoUploadCardView(
                             modifier = Modifier
                                 .padding(horizontal = 16.dp)
                                 .padding(bottom = 8.dp)
